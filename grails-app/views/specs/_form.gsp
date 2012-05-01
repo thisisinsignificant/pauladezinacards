@@ -18,3 +18,4 @@
 	<g:textField name="value" required="" value="${specsInstance?.value}"/>
 </div>
 
+

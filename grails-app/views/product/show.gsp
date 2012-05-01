@@ -41,11 +41,31 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${productInstance?.image}">
+				<li class="fieldcontain">
+					<span id="image-label" class="property-label"><g:message code="product.image.label" default="Image" /></span>
+					
+						<span class="property-value" aria-labelledby="image-label"><g:fieldValue bean="${productInstance}" field="image"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${productInstance?.price}">
 				<li class="fieldcontain">
 					<span id="price-label" class="property-label"><g:message code="product.price.label" default="Price" /></span>
 					
 						<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${productInstance}" field="price"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${productInstance?.specs}">
+				<li class="fieldcontain">
+					<span id="specs-label" class="property-label"><g:message code="product.specs.label" default="Specs" /></span>
+					
+						<g:each in="${productInstance.specs}" var="s">
+						<span class="property-value" aria-labelledby="specs-label"><g:link controller="specs" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

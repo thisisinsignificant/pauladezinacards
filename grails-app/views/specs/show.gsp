@@ -41,6 +41,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${specsInstance?.product}">
+				<li class="fieldcontain">
+					<span id="product-label" class="property-label"><g:message code="specs.product.label" default="Product" /></span>
+					
+						<span class="property-value" aria-labelledby="product-label"><g:link controller="product" action="show" id="${specsInstance?.product?.id}">${specsInstance?.product?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
