@@ -197,7 +197,7 @@ div#search input#search {
 
 div#search input#searchButton {
 	background: none;
-	background: url('../img/icons.gif') no-repeat;
+	background: url('/web-app/images/icons.gif') no-repeat;
 	width: 25px;
 	border: none;	
 }
