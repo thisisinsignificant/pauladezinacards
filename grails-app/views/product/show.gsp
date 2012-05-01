@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list product">
 			
+				<g:if test="${productInstance?.title}">
+				<li class="fieldcontain">
+					<span id="title-label" class="property-label"><g:message code="product.title.label" default="Title" /></span>
+					
+						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${productInstance}" field="title"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${productInstance?.description}">
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="product.description.label" default="Description" /></span>
