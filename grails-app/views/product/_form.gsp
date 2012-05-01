@@ -39,7 +39,7 @@
 	<label for="specs">
 		<g:message code="product.specs.label" default="Specs" />
 	</label>
-	<select>
+	<select id="speclist">
 		<g:each in="${specTypeList}">
 		<option value="${}">${ it }</option>
 		</g:each>
