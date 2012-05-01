@@ -31,14 +31,30 @@
 		<g:message code="product.price.label" default="Price" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="price" required="" value="${fieldValue(bean: productInstance, field: 'price')}"/>
+	<g:field type="number" name="price" required="" value="${fieldValue(bean: productInstance, field: 'price')}"/>
 </div>
+
 
 <div class="fieldcontain ${hasErrors(bean: productInstance, field: 'specs', 'error')} ">
 	<label for="specs">
 		<g:message code="product.specs.label" default="Specs" />
-		
 	</label>
+	<select>
+		<g:each in="${specTypeList}">
+		<option value="${}">${ it }</option>
+		</g:each>
+	</select>
+</div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 <ul class="one-to-many">
 <g:each in="${productInstance?.specs?}" var="s">
