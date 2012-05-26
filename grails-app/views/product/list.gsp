@@ -24,11 +24,15 @@
 				<thead>
 					<tr>
 					
+						<th><g:message code="product.category.label" default="Category" /></th>
+					
 						<g:sortableColumn property="title" title="${message(code: 'product.title.label', default: 'Title')}" />
 					
 						<g:sortableColumn property="description" title="${message(code: 'product.description.label', default: 'Description')}" />
 					
 						<g:sortableColumn property="image" title="${message(code: 'product.image.label', default: 'Image')}" />
+					
+						<g:sortableColumn property="thumbnailImage" title="${message(code: 'product.thumbnailImage.label', default: 'Thumbnail Image')}" />
 					
 						<g:sortableColumn property="price" title="${message(code: 'product.price.label', default: 'Price')}" />
 					
@@ -38,11 +42,15 @@
 				<g:each in="${productInstanceList}" status="i" var="productInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${productInstance.id}">${fieldValue(bean: productInstance, field: "title")}</g:link></td>
+						<td><g:link action="show" id="${productInstance.id}">${fieldValue(bean: productInstance, field: "category")}</g:link></td>
+					
+						<td>${fieldValue(bean: productInstance, field: "title")}</td>
 					
 						<td>${fieldValue(bean: productInstance, field: "description")}</td>
 					
 						<td>${fieldValue(bean: productInstance, field: "image")}</td>
+					
+						<td>${fieldValue(bean: productInstance, field: "thumbnailImage")}</td>
 					
 						<td>${fieldValue(bean: productInstance, field: "price")}</td>
 					

@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list product">
 			
+				<g:if test="${productInstance?.category}">
+				<li class="fieldcontain">
+					<span id="category-label" class="property-label"><g:message code="product.category.label" default="Category" /></span>
+					
+						<span class="property-value" aria-labelledby="category-label"><g:link controller="category" action="show" id="${productInstance?.category?.id}">${productInstance?.category?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${productInstance?.title}">
 				<li class="fieldcontain">
 					<span id="title-label" class="property-label"><g:message code="product.title.label" default="Title" /></span>
@@ -46,6 +55,15 @@
 					<span id="image-label" class="property-label"><g:message code="product.image.label" default="Image" /></span>
 					
 						<span class="property-value" aria-labelledby="image-label"><g:fieldValue bean="${productInstance}" field="image"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${productInstance?.thumbnailImage}">
+				<li class="fieldcontain">
+					<span id="thumbnailImage-label" class="property-label"><g:message code="product.thumbnailImage.label" default="Thumbnail Image" /></span>
+					
+						<span class="property-value" aria-labelledby="thumbnailImage-label"><g:fieldValue bean="${productInstance}" field="thumbnailImage"/></span>
 					
 				</li>
 				</g:if>

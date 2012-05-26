@@ -18,4 +18,11 @@
 	<g:textField name="value" required="" value="${specsInstance?.value}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: specsInstance, field: 'product', 'error')} ">
+	<label for="product">
+		<g:message code="specs.product.label" default="Product" />
+		
+	</label>
+	<g:select id="product" name="product.id" from="${pauladezinacards.Product.list()}" optionKey="id" value="${specsInstance?.product?.id}" class="many-to-one" noSelection="['null': '']"/>
+</div>
 

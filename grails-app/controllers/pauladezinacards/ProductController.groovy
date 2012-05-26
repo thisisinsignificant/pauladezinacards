@@ -16,16 +16,7 @@ class ProductController {
     }
 
     def create() {
-		List specTypeList = []
-		pauladezinacards.Specs.list().each {
-			if (specTypeList.contains(it.title)){
-				
-			} else {
-				specTypeList.add(it.title)
-			}
-		}
-		
-        [productInstance: new Product(params), specTypeList: specTypeList]
+        [productInstance: new Product(params)]
     }
 
     def save() {
