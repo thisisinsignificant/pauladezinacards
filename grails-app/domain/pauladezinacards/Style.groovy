@@ -8,7 +8,6 @@ class Style {
     static constraints = {
 		title(blank: false, nullable: false)
 		image(blank: false, nullable: false)
-		productFilter()
     }
 	
 	String 	title,

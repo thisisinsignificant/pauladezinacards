@@ -23,6 +23,6 @@
 		<g:message code="specs.product.label" default="Product" />
 		
 	</label>
-	<g:select id="product" name="product.id" from="${pauladezinacards.Product.list()}" optionKey="id" value="${specsInstance?.product?.id}" class="many-to-one" noSelection="['null': '']"/>
+	<g:select id="product" name="product.id" from="${pauladezinacards.Product.list()}" optionKey="id" optionValue="title" value="${specsInstance?.product?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
