@@ -4,7 +4,7 @@
 
 body {
 	background:url('../images/grey_bg.gif');
-   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
    font-weight: 300;
    margin: 0;
    padding: 0;
@@ -55,9 +55,51 @@ div.right {
 	float: right;
 }
 
-div.c {
-	clear: both:
-	
+div.c {	
+	display: block;
+	clear: both;
+	height: 1px;
+}
+
+div#sidebar {
+	width: 18em;
+	float: left;
+	margin-right: 2em;
+}
+
+div.box div.content {
+	padding: 1em;
+	margin: 0;
+	padding: 1em;
+	font-size: 1.4em;
+	line-height: 1.5em;
+}
+
+
+div#page-content {
+	width: 70em;
+	float: left;	
+}
+
+/* Form Styles */
+fieldset {
+	border: 1px solid #EEE;
+	margin-bottom: 2em;
+}
+
+label {
+	display: block;
+	font-size: 0.9em;
+	font-weight: bold;
+	margin-bottom: 0.3em;
+}
+
+input {
+	margin-top: 0.3em;
+}
+
+span.required-indicator {
+	color: #f00;
 }
 
 /* NAVIGATION */
@@ -119,6 +161,56 @@ background-image: -webkit-gradient(
 );
 }
 
+/* Left Nav Styles */
+div#sidebar ul.operations  {
+	border: 1px solid #87bf8d;
+	margin: 0;
+	padding: 0;
+	
+}
+
+div#sidebar ul.operations li a,div#sidebar ul.operations li a:visited {
+	color: #000;
+	text-decoration: none;
+	display: block;
+	padding-left: 1em;
+	
+	background-image: linear-gradient(bottom, rgb(209,209,209) 1%, rgb(253,252,252) 51%);
+	background-image: -o-linear-gradient(bottom, rgb(209,209,209) 1%, rgb(253,252,252) 51%);
+	background-image: -moz-linear-gradient(bottom, rgb(209,209,209) 1%, rgb(253,252,252) 51%);
+	background-image: -webkit-linear-gradient(bottom, rgb(209,209,209) 1%, rgb(253,252,252) 51%);
+	background-image: -ms-linear-gradient(bottom, rgb(209,209,209) 1%, rgb(253,252,252) 51%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.01, rgb(209,209,209)),
+	color-stop(0.51, rgb(253,252,252))
+);
+}
+
+div#sidebar ul.operations li a:hover {
+	text-decoration: underline;
+	background-image: linear-gradient(bottom, rgb(222,233,210) 1%, rgb(201,219,179) 51%);
+background-image: -o-linear-gradient(bottom, rgb(222,233,210) 1%, rgb(201,219,179) 51%);
+background-image: -moz-linear-gradient(bottom, rgb(222,233,210) 1%, rgb(201,219,179) 51%);
+background-image: -webkit-linear-gradient(bottom, rgb(222,233,210) 1%, rgb(201,219,179) 51%);
+background-image: -ms-linear-gradient(bottom, rgb(222,233,210) 1%, rgb(201,219,179) 51%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.01, rgb(222,233,210)),
+	color-stop(0.51, rgb(201,219,179))
+);	
+}
+
+div#sidebar ul.operations li {
+	border-top: 1px solid #87bf8d;	
+}
+
 /* BODY CONTENT STYLES */
 div#contentWrapper {
 	margin: 2em;
@@ -155,9 +247,9 @@ div.box div.content {
 
 div.box p {
 	margin: 0;
-	padding: 1em;
-	font-size: 1.4em;
-	line-height: 1.5em;
+	padding-bottom: 1em;
+	font-size: 1em;
+	line-height: 1em;
 }
 
 div.box h3 {
