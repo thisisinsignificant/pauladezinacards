@@ -28,7 +28,7 @@
 		<div id="page-content">
 			<div class="box">
 			<h3><g:message code="default.create.label" args="[entityName]" /></h3>
-				<div id="create-category" class="content scaffold-create box" role="main">
+				<div id="create-category" class="content scaffold-create" role="main">
 				
 				<p>Fields with <span class="required-indicator">* are required.</span></p>
 				
