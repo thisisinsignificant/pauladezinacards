@@ -26,28 +26,12 @@
 	<g:textField name="description" required="" value="${productInstance?.description}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: productInstance, field: 'image', 'error')} required">
-	<label for="image">
-		<g:message code="product.image.label" default="Image" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="image" required="" value="${productInstance?.image}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: productInstance, field: 'thumbnailImage', 'error')} required">
-	<label for="thumbnailImage">
-		<g:message code="product.thumbnailImage.label" default="Thumbnail Image" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="thumbnailImage" required="" value="${productInstance?.thumbnailImage}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: productInstance, field: 'price', 'error')} required">
 	<label for="price">
 		<g:message code="product.price.label" default="Price" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="number" name="price" required="" value="${fieldValue(bean: productInstance, field: 'price')}"/>
+	<g:field type="number" name="price" step="any" required="" value="${productInstance.price}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: productInstance, field: 'specs', 'error')} ">
@@ -65,5 +49,13 @@
 </li>
 </ul>
 
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: productInstance, field: 'styles', 'error')} ">
+	<label for="styles">
+		<g:message code="product.styles.label" default="Styles" />
+		
+	</label>
+	<g:select name="styles" from="${pauladezinacards.Style.list()}" multiple="multiple" optionKey="id" size="5" value="${productInstance?.styles*.id}" class="many-to-many"/>
 </div>
 

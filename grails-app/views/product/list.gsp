@@ -30,10 +30,6 @@
 					
 						<g:sortableColumn property="description" title="${message(code: 'product.description.label', default: 'Description')}" />
 					
-						<g:sortableColumn property="image" title="${message(code: 'product.image.label', default: 'Image')}" />
-					
-						<g:sortableColumn property="thumbnailImage" title="${message(code: 'product.thumbnailImage.label', default: 'Thumbnail Image')}" />
-					
 						<g:sortableColumn property="price" title="${message(code: 'product.price.label', default: 'Price')}" />
 					
 					</tr>
@@ -47,10 +43,6 @@
 						<td>${fieldValue(bean: productInstance, field: "title")}</td>
 					
 						<td>${fieldValue(bean: productInstance, field: "description")}</td>
-					
-						<td>${fieldValue(bean: productInstance, field: "image")}</td>
-					
-						<td>${fieldValue(bean: productInstance, field: "thumbnailImage")}</td>
 					
 						<td>${fieldValue(bean: productInstance, field: "price")}</td>
 					
