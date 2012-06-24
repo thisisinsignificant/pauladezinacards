@@ -21,15 +21,15 @@
 	<body>
 		
 		 <header>
-			<h1><a href="#">Adminulation</a></h1>
+			<h1><a href="#">Dezina Cards Administration</a></h1>
  		</header>
   <div id="navigation">
   <ul>
-  <li><a href="#">Dashboard</a></li>
-  <li><a href="#">Orders</a></li>
-  <li><a href="#">Products</a></li>
-  <li><a href="#">Pages</a></li>
-  <li><a href="#">Settings</a></li>
+  <li><a href="/pauladezinacards">Home</a></li>
+  <li><a href="${createLink(controller: 'category')}">Categories</a></li>
+  <li><a href="${createLink(controller: 'product')}">Products</a></li>
+  <li><a href="${createLink(controller: 'specs')}">Specs</a></li>
+  
   </ul>
   </div>
   <div class="c">&nbsp;</div>
