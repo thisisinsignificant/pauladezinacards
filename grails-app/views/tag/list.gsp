@@ -8,15 +8,25 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-tag" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				
+			<div id="sidebar">
+			<div class="nav" role="navigation">
+			<div class="box">
+			<h3>Menu</h3>
+			
+				<div class="content">
+				<ul class="operations">
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
+				</div>
+			</div>
+			</div>
 		</div>
+
+<div id="page-content">
+			<div class="box">
+			<h3><g:message code="default.list.label" args="[entityName]" /></h3>		
 		<div id="list-tag" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -25,7 +35,7 @@
 					<tr>
 					
 						<g:sortableColumn property="title" title="${message(code: 'tag.title.label', default: 'Title')}" />
-					
+					<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -34,12 +44,19 @@
 					
 						<td><g:link action="show" id="${tagInstance.id}">${fieldValue(bean: tagInstance, field: "title")}</g:link></td>
 					
+					<td class="crud-buttons">
+								<g:link action="show" id="${tagInstance.id}"><img src="../images/view.png"></g:link> 
+								<g:link action="edit" id="${tagInstance.id}"><img src="../images/update.png"></g:link>
+								<g:link class="delete" action="delete" id="${tagInstance.id}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"><img src="../images/delete.png"> </g:link>
+								</td>
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
 			<div class="pagination">
 				<g:paginate total="${tagInstanceTotal}" />
+			</div>
+			</div>
 			</div>
 		</div>
 	</body>

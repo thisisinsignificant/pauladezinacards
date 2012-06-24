@@ -8,15 +8,25 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-specs" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+
+		<div id="sidebar">
+			<div class="nav" role="navigation">
+			<div class="box">
+			<h3>Menu</h3>
+			
+				<div class="content">
+				<ul class="operations">
+			<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
+				</div>
+			</div>
+			</div>
 		</div>
-		<div id="list-specs" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+		
+		<div id="page-content">
+			<div class="box">
+			<h3><g:message code="default.list.label" args="[entityName]" /></h3>
+			<div id="list-specs" class="content scaffold-list" role="main">	
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -29,7 +39,7 @@
 						<g:sortableColumn property="value" title="${message(code: 'specs.value.label', default: 'Value')}" />
 					
 						<th><g:message code="specs.product.label" default="Product" /></th>
-					
+					<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -42,12 +52,20 @@
 					
 						<td>${fieldValue(bean: specsInstance, field: "product")}</td>
 					
+					<td class="crud-buttons">
+								<g:link action="show" id="${specsInstance.id}"><img src="../images/view.png"></g:link> 
+								<g:link action="edit" id="${specsInstance.id}"><img src="../images/update.png"></g:link>
+								<g:link class="delete" action="delete" id="${specsInstance.id}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"><img src="../images/delete.png"> </g:link>
+								</td>
+								
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
 			<div class="pagination">
 				<g:paginate total="${specsInstanceTotal}" />
+			</div>
+		</div>
 			</div>
 		</div>
 	</body>
