@@ -18,11 +18,12 @@
 	<g:textField name="image" required="" value="${styleInstance?.image}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: styleInstance, field: 'productFilter', 'error')} ">
-	<label for="productFilter">
-		<g:message code="style.productFilter.label" default="Product Filter" />
-		
+<div class="fieldcontain ${hasErrors(bean: styleInstance, field: 'image', 'error')} required">
+	<label for="product">
+		<g:message code="product.title.label" default="Product" />
 	</label>
-
+	<g:select id="product" name="product?.id" from="${pauladezinacards.Product.list()}" optionKey="id" optionValue="title" value="${categoryInstance?.product?.id}" noSelection="['null': '']"/>
 </div>
+
+
 
