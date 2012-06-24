@@ -29,6 +29,8 @@
   <li><a href="${createLink(controller: 'category')}">Categories</a></li>
   <li><a href="${createLink(controller: 'product')}">Products</a></li>
   <li><a href="${createLink(controller: 'specs')}">Specs</a></li>
+  <li><a href="${createLink(controller: 'style')}">Styles</a></li>
+  <li><a href="${createLink(controller: 'tag')}">Tags</a></li>
   
   </ul>
   </div>

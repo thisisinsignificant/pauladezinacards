@@ -50,24 +50,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${productInstance?.image}">
-				<li class="fieldcontain">
-					<span id="image-label" class="property-label"><g:message code="product.image.label" default="Image" /></span>
-					
-						<span class="property-value" aria-labelledby="image-label"><g:fieldValue bean="${productInstance}" field="image"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${productInstance?.thumbnailImage}">
-				<li class="fieldcontain">
-					<span id="thumbnailImage-label" class="property-label"><g:message code="product.thumbnailImage.label" default="Thumbnail Image" /></span>
-					
-						<span class="property-value" aria-labelledby="thumbnailImage-label"><g:fieldValue bean="${productInstance}" field="thumbnailImage"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${productInstance?.price}">
 				<li class="fieldcontain">
 					<span id="price-label" class="property-label"><g:message code="product.price.label" default="Price" /></span>
@@ -83,6 +65,17 @@
 					
 						<g:each in="${productInstance.specs}" var="s">
 						<span class="property-value" aria-labelledby="specs-label"><g:link controller="specs" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${productInstance?.styles}">
+				<li class="fieldcontain">
+					<span id="styles-label" class="property-label"><g:message code="product.styles.label" default="Styles" /></span>
+					
+						<g:each in="${productInstance.styles}" var="s">
+						<span class="property-value" aria-labelledby="styles-label"><g:link controller="style" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
