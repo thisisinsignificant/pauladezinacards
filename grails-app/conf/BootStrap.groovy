@@ -1,18 +1,27 @@
 import pauladezinacards.Product
+import pauladezinacards.Category
 
 class BootStrap {
 
     def init = { servletContext ->
 		
-		def product1 = new Product(
-			title: 'title1',
-			description: 'description1',
-			image: 'image1',
-			price: 7357
-			
+		def cat1 = new Category(
+			title: 'Category'						
 			)
-		product1.save()
+		cat1.save()
+		def cat2 = new Category(
+			title: 'subCategory',
+			parentCategory: Category.findById('1')
+			)
+		cat2.save()
 		
+		def prod1 = new Product(
+			category: Category.findById('1'),
+			title: 'Title',
+			description: 'Description',
+			price: 212
+			)
+		prod1.save()
 		
 		
 		
