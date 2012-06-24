@@ -7,7 +7,7 @@
 		<g:message code="product.category.label" default="Category" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="category" name="category.id" from="${pauladezinacards.Category.list()}" optionKey="id" required="" value="${productInstance?.category?.id}" class="many-to-one"/>
+	<g:select id="category" name="category.id" from="${pauladezinacards.Category.list()}" optionKey="id" required="" optionValue="title" value="${productInstance?.category?.title}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: productInstance, field: 'title', 'error')} required">
@@ -23,7 +23,7 @@
 		<g:message code="product.description.label" default="Description" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="description" required="" value="${productInstance?.description}"/>
+	<g:textArea name="description" required="" value="${productInstance?.description}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: productInstance, field: 'price', 'error')} required">
@@ -31,7 +31,7 @@
 		<g:message code="product.price.label" default="Price" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="number" name="price" step="any" required="" value="${productInstance.price}"/>
+	<g:textField  name="price" step="any" required="" value="${productInstance.price}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: productInstance, field: 'specs', 'error')} ">
@@ -45,7 +45,10 @@
     <li><g:link controller="specs" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">
-<g:link controller="specs" action="create" params="['product.id': productInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'specs.label', default: 'Specs')])}</g:link>
+<g:textField name="specsTitle" placeHolder="Title"/>
+<g:textField name="specsvalue" placeHolder="Value"/>
+<a href="#" class="newSpecs">add Spec</a>
+<%--<g:link controller="specs" action="create" params="['product.id': productInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'specs.label', default: 'Specs')])}</g:link>--%>
 </li>
 </ul>
 
@@ -56,6 +59,6 @@
 		<g:message code="product.styles.label" default="Styles" />
 		
 	</label>
-	<g:select name="styles" from="${pauladezinacards.Style.list()}" multiple="multiple" optionKey="id" size="5" value="${productInstance?.styles*.id}" class="many-to-many"/>
+	<g:select name="styles" from="${pauladezinacards.Style.list()}" multiple="multiple" optionValue="title" optionKey="id" size="5" value="${productInstance?.styles*.id}" class="many-to-many"/>
 </div>
 
