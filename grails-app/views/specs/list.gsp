@@ -39,7 +39,7 @@
 						<g:sortableColumn property="value" title="${message(code: 'specs.value.label', default: 'Value')}" />
 					
 						<th><g:message code="specs.product.label" default="Product" /></th>
-					<th></th>
+					<th class="crud-buttons">Controls</th>
 					</tr>
 				</thead>
 				<tbody>

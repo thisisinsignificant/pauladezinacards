@@ -39,7 +39,7 @@
 							
 								<th><g:message code="category.parentCategory.label" default="Parent Category" /></th>
 
-								<th>Controls</th>
+								<th class="crud-buttons">Controls</th>
 
 							</tr>
 						</thead>

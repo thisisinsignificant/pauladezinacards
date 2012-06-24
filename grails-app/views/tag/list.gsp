@@ -35,7 +35,7 @@
 					<tr>
 					
 						<g:sortableColumn property="title" title="${message(code: 'tag.title.label', default: 'Title')}" />
-					<th></th>
+					<th class="crud-buttons">Control</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -129,8 +129,8 @@ td,th {
 	padding: 0.3em;
 }
 
-td.crud-buttons {
-	width: 4em;
+th.crud-buttons, td.crud-buttons {
+	width: 4.5em;
 }
 
 th {
