@@ -26,7 +26,7 @@
 					
 						<g:sortableColumn property="title" title="${message(code: 'category.title.label', default: 'Title')}" />
 					
-						<g:sortableColumn property="parentCategory" title="${message(code: 'category.parentCategory.label', default: 'Parent Category')}" />
+						<th><g:message code="category.parentCategory.label" default="Parent Category" /></th>
 					
 					</tr>
 				</thead>

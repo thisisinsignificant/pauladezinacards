@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="parentCategory-label" class="property-label"><g:message code="category.parentCategory.label" default="Parent Category" /></span>
 					
-						<span class="property-value" aria-labelledby="parentCategory-label"><g:fieldValue bean="${categoryInstance}" field="parentCategory"/></span>
+						<span class="property-value" aria-labelledby="parentCategory-label"><g:link controller="category" action="show" id="${categoryInstance?.parentCategory?.id}">${categoryInstance?.parentCategory?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

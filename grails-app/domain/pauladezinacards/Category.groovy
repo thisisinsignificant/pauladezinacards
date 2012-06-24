@@ -10,8 +10,7 @@ class Category {
 		products()
     }
 	
-	String 	title,
-			parentCategory
-			
+	String 	title
+	Category parentCategory			
 			
 }
