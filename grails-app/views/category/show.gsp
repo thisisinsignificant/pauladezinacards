@@ -8,16 +8,27 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#show-category" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+		
+		<div id="sidebar">
+			<div class="nav" role="navigation">
+			<div class="box">
+			<h3>Menu</h3>
+			
+				<div class="content">
+				<ul class="operations">
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
+			</div>
+			</div>
+			</div>
 		</div>
-		<div id="show-category" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+		
+		<div id="page-content">
+			<div class="box">
+			<h3><g:message code="default.show.label" args="[entityName]" /></h3>
+			<div id="show-category" class="content scaffold-show" role="main">
+			
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -25,32 +36,34 @@
 			
 				<g:if test="${categoryInstance?.title}">
 				<li class="fieldcontain">
+				
+					<div class="left item-label">
 					<span id="title-label" class="property-label"><g:message code="category.title.label" default="Title" /></span>
+					</div>
 					
-						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${categoryInstance}" field="title"/></span>
+					<div class="left item-property">
+					<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${categoryInstance}" field="title"/></span>
+					</div>
 					
+					<div class="c"></div>
 				</li>
 				</g:if>
 			
 				<g:if test="${categoryInstance?.parentCategory}">
 				<li class="fieldcontain">
+					<div class="left item-label">
 					<span id="parentCategory-label" class="property-label"><g:message code="category.parentCategory.label" default="Parent Category" /></span>
+					</div>
 					
-						<span class="property-value" aria-labelledby="parentCategory-label"><g:link controller="category" action="show" id="${categoryInstance?.parentCategory?.id}">${categoryInstance?.parentCategory?.encodeAsHTML()}</g:link></span>
+					<div class="left item-property">
+					<span class="property-value" aria-labelledby="parentCategory-label"><g:link controller="category" action="show" id="${categoryInstance?.parentCategory?.id}">${categoryInstance?.parentCategory?.encodeAsHTML()}</g:link></span>
+					</div>
 					
+					<div class="c">&nbsp;</div>
 				</li>
 				</g:if>
 			
-				<g:if test="${categoryInstance?.products}">
-				<li class="fieldcontain">
-					<span id="products-label" class="property-label"><g:message code="category.products.label" default="Products" /></span>
-					
-						<g:each in="${categoryInstance.products}" var="p">
-						<span class="property-value" aria-labelledby="products-label"><g:link controller="product" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
+				
 			
 			</ol>
 			<g:form>
@@ -61,5 +74,8 @@
 				</fieldset>
 			</g:form>
 		</div>
+			</div>
+		</div>
+		
 	</body>
 </html>

@@ -81,9 +81,22 @@ div#page-content {
 	float: left;	
 }
 
+span.property-label {
+	font-weight: bold;
+	margin-right: 2em
+}
+
+div.message {
+	background-color: #dcf7ff;
+	border: 1px solid #8da2a8;
+	padding: 1em 2em 1em 1em;
+	font-size: 0.9em;
+	margin-bottom: 2em;
+}
+
 /* Form Styles */
 fieldset {
-	border: 1px solid #EEE;
+	border: 1px solid #b2b2b2;
 	margin-bottom: 2em;
 }
 
@@ -102,10 +115,22 @@ span.required-indicator {
 	color: #f00;
 }
 
+ol.property-list {
+	list-style-type: none;
+}
+
+ol.property-list div.item-label {
+	width: 12em;
+}
+
 /* Default Tablr Styles */
 
 td,th {
 	padding: 0.3em;
+}
+
+td.crud-buttons {
+	width: 4em;
 }
 
 th {
@@ -134,13 +159,15 @@ th a:hover {
 
 table {
 	width: 100%;
-	border-bottom: 1px solid #777;
 	border-spacing: 2px;
 }
 
-
 tr.even {
-	background: #f2f2f2;
+	background: #E5F1F4;
+}
+
+tr.odd {
+	background: #E5F1F4;
 }
 
 /* NAVIGATION */

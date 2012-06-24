@@ -16,7 +16,6 @@
 			
 				<div class="content">
 				<ul class="operations">
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 				</div>
@@ -49,7 +48,12 @@
 								<td><g:link action="show" id="${categoryInstance.id}">${fieldValue(bean: categoryInstance, field: "title")}</g:link></td>
 							
 								<td>${fieldValue(bean: categoryInstance, field: "parentCategory")}</td>
-							
+								
+								<td class="crud-buttons">
+								<g:link action="show" id="${categoryInstance.id}"><img src="../images/view.png"></g:link> 
+								<g:link action="edit" id="${categoryInstance.id}"><img src="../images/update.png"></g:link>
+								<g:link class="delete" action="delete" id="${categoryInstance.id}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"><img src="../images/delete.png"> </g:link>
+								</td>
 							</tr>
 						</g:each>
 						</tbody>
