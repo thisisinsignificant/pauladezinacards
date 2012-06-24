@@ -38,6 +38,7 @@
 								<g:sortableColumn property="title" title="${message(code: 'category.title.label', default: 'Title')}" />
 							
 								<th><g:message code="category.parentCategory.label" default="Parent Category" /></th>
+								<th>Controls</th>
 							
 							</tr>
 						</thead>
@@ -47,7 +48,7 @@
 							
 								<td><g:link action="show" id="${categoryInstance.id}">${fieldValue(bean: categoryInstance, field: "title")}</g:link></td>
 							
-								<td>${fieldValue(bean: categoryInstance, field: "parentCategory")}</td>
+								<td>${fieldValue(bean: categoryInstance, field: "parentCategory.title")}</td>
 								
 								<td class="crud-buttons">
 								<g:link action="show" id="${categoryInstance.id}"><img src="../images/view.png"></g:link> 

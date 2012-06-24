@@ -15,7 +15,7 @@
 		<g:message code="category.parentCategory.label" default="Parent Category" />
 		
 	</label>
-	<g:select id="parentCategory" name="parentCategory.id" from="${pauladezinacards.Category.list()}" optionKey="id" value="${categoryInstance?.parentCategory?.id}" class="many-to-one" noSelection="['null': '']"/>
+	<g:select id="parentCategory" name="parentCategory.id" from="${pauladezinacards.Category.list()}" optionKey="id" optionValue="title" value="${categoryInstance?.parentCategory?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
 

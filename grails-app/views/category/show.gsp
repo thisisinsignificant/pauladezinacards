@@ -56,7 +56,7 @@
 					</div>
 					
 					<div class="left item-property">
-					<span class="property-value" aria-labelledby="parentCategory-label"><g:link controller="category" action="show" id="${categoryInstance?.parentCategory?.id}">${categoryInstance?.parentCategory?.encodeAsHTML()}</g:link></span>
+					<span class="property-value" aria-labelledby="parentCategory-label"><g:link controller="category" action="show" id="${categoryInstance?.parentCategory?.id}">${categoryInstance?.parentCategory?.title?.encodeAsHTML()}</g:link></span>
 					</div>
 					
 					<div class="c">&nbsp;</div>
